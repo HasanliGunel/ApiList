@@ -7,6 +7,6 @@ namespace Api_list
 {
     public class Number
     {
-        List<int> numbers = new List<int>() { 1, 2, 5, 7, 8, 10 };
+        public List<int> numbers { get; set; }
     }
 }

@@ -11,12 +11,22 @@ namespace Api_list.Controllers
     [ApiController]
     public class NumberController : ControllerBase
     {
-        Number num = new Number();
-        
+
+
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(num);
+            Number num = new Number();
+            num.numbers = new List<int>() { 1, 2, 3 };
+            num.numbers.Add(1);
+            num.numbers.Add(5);
+            for (int i = 0; i < num.numbers.Count; i++)
+            {
+                num.numbers[i] = num.numbers[i] + 5;
+            }
+            return Ok(num.numbers);
         }
+
+        
     }
 }
